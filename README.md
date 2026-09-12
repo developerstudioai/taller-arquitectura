@@ -18,11 +18,11 @@ Después abra `http://localhost:8080`.
 - `docs/`: backlog, decisiones arquitectónicas, diagramas PlantUML y contrato API.
 - `infra/`: configuración Terraform segura para ejecutar `init` y `plan` sin crear recursos.
 - `.github/workflows/ci.yml`: validación mínima en GitHub Actions.
-- `sonar-project.properties`: configuración base para analizar el proyecto con SonarQube Cloud.
+- `sonar-project.properties`: configuración base para analizar el proyecto con SonarQube Community autoalojado.
 
 ## Deuda técnica intencional
 
-El ejercicio conserva CSS incrustado y manejadores `onclick` en el HTML. Son decisiones intencionalmente simples para que SonarQube Cloud pueda mostrar problemas de mantenibilidad. La mejora propuesta está documentada en `docs/deuda-tecnica.md`.
+El ejercicio conserva CSS incrustado y manejadores `onclick` en el HTML. Son decisiones intencionalmente simples para que SonarQube Community pueda mostrar problemas de mantenibilidad. La mejora propuesta está documentada en `docs/deuda-tecnica.md`.
 
 ## Seguridad y costos
 
