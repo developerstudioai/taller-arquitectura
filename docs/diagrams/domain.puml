@@ -1,0 +1,24 @@
+@startuml
+hide methods
+class Usuario
+class Evento {
+  nombre
+  fecha
+  capacidad
+  entradasDisponibles
+}
+class Entrada
+class Orden {
+  cantidad
+  total
+  estado
+}
+class Pago {
+  referencia
+  estado
+}
+Usuario "1" -- "0..*" Orden : crea
+Orden "1" -- "1..*" Entrada : contiene
+Evento "1" -- "0..*" Entrada : ofrece
+Orden "1" -- "0..1" Pago : paga
+@enduml

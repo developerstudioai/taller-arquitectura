@@ -1,0 +1,25 @@
+@startuml
+skinparam componentStyle rectangle
+actor Comprador
+component "API Gateway" as gateway
+component "Servicio Usuarios" as users
+component "Servicio Eventos" as events
+component "Servicio Pedidos" as orders
+component "Servicio Pagos" as payments
+queue "Bus de eventos\nPagoAprobado" as bus
+database "DB Usuarios" as usersdb
+database "DB Eventos" as eventsdb
+database "DB Pedidos" as ordersdb
+database "DB Pagos" as paymentsdb
+Comprador --> gateway : HTTP REST
+gateway --> users
+gateway --> events
+gateway --> orders
+gateway --> payments
+users --> usersdb
+events --> eventsdb
+orders --> ordersdb
+payments --> paymentsdb
+payments --> bus : publica PagoAprobado
+bus --> orders : consume evento
+@enduml

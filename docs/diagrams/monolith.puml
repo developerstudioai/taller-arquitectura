@@ -1,0 +1,12 @@
+@startuml
+skinparam componentStyle rectangle
+package "Monolito EventFlow" {
+  [Presentación\nHTML CSS JavaScript] as ui
+  [Lógica de negocio\nUserService EventService\nOrderService PaymentService] as business
+  [Acceso a datos\nUserDAO EventDAO\nOrderDAO PaymentDAO] as dal
+  database "Base de datos SQL\nUsers Events Orders Payments" as db
+  ui --> business
+  business --> dal
+  dal --> db
+}
+@enduml

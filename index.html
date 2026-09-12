@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventFlow - Venta de Entradas</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; color: #1f2937; }
+    .container { max-width: 680px; margin: auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h1 { color: #17365d; }
+    button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+    .evento { border-bottom: 1px solid #ddd; padding-bottom: 14px; margin-bottom: 14px; }
+    .metadata { color: #4b5563; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Bienvenido a EventFlow</h1>
+    <p>Tu plataforma para comprar entradas a los mejores eventos.</p>
+
+    <section class="evento">
+      <h2>Concierto de Rock</h2>
+      <p class="metadata">Fecha: 30 de diciembre | Entradas disponibles: 250</p>
+      <button onclick="comprarEntrada('Concierto de Rock')">Comprar entrada</button>
+    </section>
+
+    <section class="evento">
+      <h2>Feria de Tecnología</h2>
+      <p class="metadata">Fecha: 15 de enero | Entradas disponibles: 120</p>
+      <button onclick="comprarEntrada('Feria de Tecnología')">Comprar entrada</button>
+    </section>
+
+    <p id="mensaje" aria-live="polite"></p>
+    <footer><p>&copy; 2026 EventFlow. Todos los derechos reservados.</p></footer>
+  </main>
+  <script>
+    function comprarEntrada(evento) {
+      document.getElementById('mensaje').textContent = 'Entrada seleccionada para ' + evento + '. Compra simulada.';
+    }
+  </script>
+</body>
+</html>

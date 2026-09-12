@@ -1,0 +1,16 @@
+# Editor and operating-system files
+.DS_Store
+~$*.docx
+
+# Workshop instructions and submitted report stay local
+instrucciones-taller-eventflow.txt
+solucion-taller-eventflow.docx
+
+# Terraform local state
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Sonar scanner output
+.scannerwork/

@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: EventFlow API
+  version: 1.0.0
+  description: Contrato inicial para el ejercicio de venta de entradas.
+paths:
+  /events:
+    get:
+      summary: Lista eventos disponibles
+      responses:
+        '200':
+          description: Lista de eventos
+  /events/{id}:
+    get:
+      summary: Consulta el detalle de un evento
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Detalle del evento
+        '404':
+          description: Evento no encontrado
+  /orders:
+    post:
+      summary: Crea una orden de compra
+      responses:
+        '201':
+          description: Orden creada
+        '400':
+          description: Inventario insuficiente
